@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cmpsc487w._487w_ps1.TableView">
+   <children>
+      <TableView fx:id="Swipe_Table" editable="true" layoutX="14.0" layoutY="39.0" prefHeight="200.0" prefWidth="255.0">
+        <columns>
+          <TableColumn fx:id="Swipe_ID" minWidth="45.0" prefWidth="109.33332824707031" text="ID number" />
+          <TableColumn fx:id="date_time" prefWidth="154.66668701171875" sortType="DESCENDING" text="Date/Time" />
+        </columns>
+      </TableView>
+      <TableView fx:id="access_table" layoutX="317.0" layoutY="39.0" prefHeight="200.0" prefWidth="229.0">
+        <columns>
+          <TableColumn fx:id="access_ID" prefWidth="85.33334350585938" text="ID number" />
+          <TableColumn fx:id="active" prefWidth="65.33331298828125" text="Active" />
+            <TableColumn fx:id="suspended" prefWidth="75.0" text="Suspended" />
+        </columns>
+      </TableView>
+      <TextField fx:id="ID_Search" layoutX="14.0" layoutY="239.0" promptText="ID Number" />
+      <Button layoutX="164.0" layoutY="239.0" mnemonicParsing="false" onAction="#onSwipeIdSearch" prefHeight="25.0" prefWidth="81.0" text="ID Search" />
+      <DatePicker fx:id="Date_Search" layoutX="14.0" layoutY="282.0" />
+      <CheckBox fx:id="All_day" layoutX="14.0" layoutY="307.0" mnemonicParsing="false" text="All Day?" />
+      <Button layoutX="14.0" layoutY="349.0" mnemonicParsing="false" onAction="#onSwipeDateSearch" text="Date/Time Search" />
+      <TextField fx:id="Time_search" layoutX="14.0" layoutY="324.0" promptText="Time(HH:MM or HH)" />
+      <TextField fx:id="ID_access" layoutX="317.0" layoutY="239.0" prefHeight="25.0" prefWidth="229.0" promptText="ID Number" />
+      <Button layoutX="317.0" layoutY="264.0" mnemonicParsing="false" onAction="#onActivateButtonClick" text="Activate" />
+      <Button layoutX="376.0" layoutY="264.0" mnemonicParsing="false" onAction="#onSuspendButtonClick" text="Suspend" />
+      <Button layoutX="438.0" layoutY="264.0" mnemonicParsing="false" onAction="#onReactivateButtonClick" text="Reactivate" />
+      <TextField fx:id="Admin_Add" layoutX="317.0" layoutY="312.0" promptText="ID (abc1234)" />
+      <PasswordField fx:id="Password_1" layoutX="317.0" layoutY="337.0" promptText="Password" />
+      <PasswordField fx:id="Password_2" layoutX="317.0" layoutY="362.0" promptText="Password Again" />
+      <Button layoutX="467.0" layoutY="337.0" mnemonicParsing="false" onAction="#onNewAdminButtonClick" text="Add Admin" />
+      <Label fx:id="Date_Format" layoutX="124.0" layoutY="353.0" />
+      <Label fx:id="access_lable" layoutX="317.0" layoutY="289.0" />
+      <Button layoutX="53.0" layoutY="14.0" mnemonicParsing="false" onAction="#baseSwipeTable" text="Refresh" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="200.0" prefWidth="331.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cmpsc487w._487w_ps1.AdminApplication">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="104.0" text="Admin Signin" textAlignment="CENTER" />
+    <TextField fx:id="Admin_ID" promptText="Admin ID" />
+    <PasswordField fx:id="Password" promptText="Password" />
+    <Button onAction="#onSigninButtonClick" prefHeight="26.0" prefWidth="89.0" text="Sign In" />
+    <Label fx:id="tf" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="33.0" prefHeight="17.0" prefWidth="104.0" textAlignment="CENTER" />
+</VBox>
