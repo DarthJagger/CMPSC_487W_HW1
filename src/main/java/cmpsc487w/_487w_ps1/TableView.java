@@ -111,6 +111,7 @@ public class TableView implements Initializable{
     @FXML
     protected void onSwipeIdSearch() throws IOException {
         S_items.clear();
+        A_items.clear();
 
         try {
             Statement stmt = c.createStatement();
@@ -124,6 +125,20 @@ public class TableView implements Initializable{
 
 
                     S_items.add(new Swipe_node(new SimpleStringProperty(Integer.toString(id)),new SimpleStringProperty(date_time)));
+                }
+            }
+            stmt = c.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM Id_access");
+
+
+            while (rs.next()) {
+                int id = rs.getInt("Id_number");
+                boolean active = rs.getBoolean("Active");
+                boolean suspended = rs.getBoolean("Suspended");
+                if(Integer.toString(id).equals(ID_Search.getText())){
+
+
+                    A_items.add(new Access_node(new SimpleStringProperty(Integer.toString(id)),new SimpleBooleanProperty(active),new SimpleBooleanProperty(suspended)));
                 }
             }
 
@@ -177,7 +192,6 @@ public class TableView implements Initializable{
                 else {
                     if(selectedTime.length()==2){
                         date_check.delete(13,19);
-                        System.out.println(date_check);
                         if(date_check.toString().equals(selectedDate.toString()+" "+selectedTime.toString())){
                             S_items.add(new Swipe_node(new SimpleStringProperty(Integer.toString(id)), new SimpleStringProperty(date_time)));
                         }
@@ -185,7 +199,6 @@ public class TableView implements Initializable{
                     }
                     else if (selectedTime.length()==5){
                         date_check.delete(16,19);
-                        System.out.println(date_check);
                         if(date_check.toString().equals(selectedDate.toString()+" "+selectedTime.toString())){
                             S_items.add(new Swipe_node(new SimpleStringProperty(Integer.toString(id)), new SimpleStringProperty(date_time)));
                         }
