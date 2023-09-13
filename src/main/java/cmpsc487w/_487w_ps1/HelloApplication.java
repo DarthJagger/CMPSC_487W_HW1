@@ -77,7 +77,8 @@ public class HelloApplication extends Application {
                         }
                         launch();
 
-                         count = 1;
+                         count++;
+                         break;
                     case 3:
                         System.exit(0);
                 }
