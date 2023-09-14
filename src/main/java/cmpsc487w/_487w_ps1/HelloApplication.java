@@ -52,7 +52,8 @@ public class HelloApplication extends Application {
                 System.out.println("Please enter a number below to continue;" +
                         "\n1) To swipe in\n2)To access Admin sign in\n3) To close program");
 
-                input = scan.nextInt();
+
+                    input = scan.nextInt();
 
 
                 switch (input) {
